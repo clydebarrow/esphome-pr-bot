@@ -26,7 +26,7 @@ It will request the following permissions:
 - Updates existing comments when PRs are updated
 - Verifies GitHub webhook signatures for security
 
-## Setup
+## Building your own version (not required just to install the app on a repository)
 
 1. Create a GitHub App:
     - Go to GitHub Developer Settings > GitHub Apps > New GitHub App
