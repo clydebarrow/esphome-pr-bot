@@ -4,3 +4,7 @@ compatibility_date = "2024-03-26"
 compatibility_flags = ["nodejs_compat"]
 find_additional_modules = true
 
+
+[observability.logs]
+enabled = true
+
