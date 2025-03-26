@@ -1,0 +1,9 @@
+.idea
+uploads/
+__pycache__
+.env
+node_modules/
+.wrangler/
+*.pem
+.dev.vars
+dist/
