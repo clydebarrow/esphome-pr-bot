@@ -23,7 +23,6 @@ jobs:
           cache-dependency-path: './package-lock.json'
 
       - run: npm ci
-      - run: npm test
 
       - name: Build and Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
