@@ -8,7 +8,3 @@ find_additional_modules = true
 [observability.logs]
 enabled = true
 
-
-[[kv_namespaces]]
-binding = "GITHUB_TOKENS"
-id = "75b765190cf444b3b66d0feedaf942b0"
