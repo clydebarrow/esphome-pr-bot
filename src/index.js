@@ -133,7 +133,7 @@ async function createComment(octokit, pr, esphomeChanges, componentChanges) {
   } else {
     commentBody = generateRepoInstructions(prNumber, pr.head.ref, pr.base.repo.html_url);
   }
-  commentBody += `\n\n---\n\n${commentMarker}`;
+  commentBody += `\n\n---\n(Added by my bot)\n\n${commentMarker}`;
 
   // Check for existing bot comment
   const comments = await octokit.rest.issues.listComments({
