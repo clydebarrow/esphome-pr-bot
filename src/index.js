@@ -236,22 +236,17 @@ router.post('/mailhook', async (request, env) => {
     repo: repo,
     pull_number: prNumber,
   });
-  const state = prDetails.data.state;
   const user_id = prDetails.data.user.login;
-  if (user_id !== 'clydebarrow') {
+  if (user_id !== env.USER_NAME) {
     return new Response('Wrong user', {status: 202});
   }
-
-  //if (state === 'closed') {
-    //return new Response('PR is closed', {status: 202});
-  //}
 
   const {esphomeChanges, componentChanges} = await getEsphomeAndComponentChanges(octokit, owner, repo, prNumber);
   if (componentChanges.length === 0) {
     return new Response('No component changes', { status: 202 });
   }
 
-  await createComment(new Octokit({ auth: env.CPS_TOKEN }), prDetails.data, esphomeChanges, componentChanges);
+  await createComment(new Octokit({ auth: env.USER_TOKEN }), prDetails.data, esphomeChanges, componentChanges);
   return new Response("OK");
 });
 
